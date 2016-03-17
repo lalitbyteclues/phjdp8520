@@ -1766,7 +1766,16 @@ a.btn-button-st:hover {
 	color: #333;
 	margin: 10px 0px 0px 0px
 }
-.sticky {position: fixed;margin-top: 0px;z-index: 10000;display: block;top: 0px;	height: 36px;width: 100%;height: 44px;} 
+.sticky {
+	position: fixed;
+	margin-top: 0px;
+	z-index: 10000;
+	display: block;
+	top: 0px;
+	height: 36px;
+	width: 100%;
+	height: 44px;					/* height of navbar fixed */
+}
 .sticky #mobile-menu ul.navmenu .menutop {
 	margin-left: 180px;
 	margin-top: -4px

@@ -5,7 +5,6 @@
  include('head.php'); ?> 
 <body class="cms-index-index" >
 <style type="text/css">.APILIST {height: 200px;overflow: auto;}</style>
-<link rel="stylesheet" type="text/css" href="/css/slidernav.css" media="screen, projection" />
   <div class="page"> 
   <!-- Header -->
     <?php include('inner_menu.php'); ?>
@@ -13,92 +12,239 @@
    <!-- **************************************************************************************************** -->
   <div id="wizard">
     <h1>Select Products</h1>
-<div>
-<div id="slider">
-	<div class="slider-content">
-	 <ul><li id="a"><a name="a" class="title">A</a>
-	 <ul id="API-A"></ul>
-			</li>
-			<li id="b"><a name="b" class="title">B</a>
-				<ul id="API-B"> 
-				</ul>
-			</li>
-			<li id="c"><a name="c" class="title">c</a>
-				<ul  id="API-C"> </ul>
-			</li>
-			<li id="d"><a name="d" class="title">d</a>
-				<ul  id="API-D">  </ul>
-			</li>
-			<li id="e"><a name="e" class="title">E</a>
-				<ul  id="API-E"></ul>
-			</li>
-			<li id="f"><a name="f" class="title">f</a>
-				<ul  id="API-F"></ul>
-			</li>
-			<li id="g"><a name="g" class="title">g</a>
-				<ul  id="API-G"></ul>
-			</li>
-			<li id="h"><a name="h" class="title">h</a>
-				<ul  id="API-H"></ul>
-			</li>
-			<li id="i"><a name="i" class="title">i</a>
-				<ul  id="API-I"></ul>
-			</li>
-			<li id="j"><a name="j" class="title">j</a>
-				<ul  id="API-J"></ul>
-			</li>
-			<li id="k"><a name="k" class="title">k</a>
-				<ul  id="API-K"></ul>
-			</li>
-			<li id="l"><a name="l" class="title">l</a>
-				<ul  id="API-L"></ul>
-			</li>
-			<li id="m"><a name="m" class="title">m</a>
-				<ul  id="API-M"></ul>
-			</li>
-			<li id="n"><a name="n" class="title">n</a>
-				<ul id="API-N"></ul>
-			</li>
-			<li id="o"><a name="o" class="title">o</a>
-				<ul  id="API-O"> </ul>
-			</li>
-			<li id="p"><a name="p" class="title">p</a>
-				<ul  id="API-P"></ul>
-			</li>
-			<li id="q"><a name="q" class="title">q</a>
-				<ul  id="API-Q"></ul>
-			</li>
-			<li id="r"><a name="r" class="title">r</a>
-				<ul  id="API-R"></ul>
-			</li>
-			<li id="s"><a name="s" class="title">s</a>
-				<ul  id="API-S"></ul>
-			</li>
-			<li id="t"><a name="t" class="title">t</a>
-				<ul id="API-T"></ul>
-			</li>
-			<li id="u"><a name="u" class="title">u</a>
-				<ul  id="API-U"></ul>
-			</li>
-			<li id="v"><a name="v" class="title">v</a>
-				<ul  id="API-V"></ul>
-			</li>
-			<li id="w"><a name="w" class="title">w</a>
-				<ul  id="API-W"></ul>
-			</li>
-			<li id="x"><a name="x" class="title">x</a>
-				<ul  id="API-X"></ul>
-			</li>
-			<li id="y"><a name="y" class="title">y</a>
-				<ul  id="API-Y"></ul>
-			</li>
-			<li id="z"><a name="z" class="title">z</a>
-				<ul  id="API-Z"></ul>
-			</li>
-		</ul>
-	</div>
-</div>  
-</div> 
+    <div>
+      <section class="brands_list_block">
+        <div class="container">           
+          <!-- ROW -->
+            <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="2s">
+                <div class="brand_letter">A</div>
+                <ul class="product_catalog_list APILIST" id="API-A">                       
+                </ul>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="2s">
+                <div class="brand_letter">B</div>
+                <ul class="product_catalog_list APILIST" id="API-B">
+                </ul>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="2s">
+                <div class="brand_letter">C</div>
+                <ul class="product_catalog_list APILIST" id="API-C">
+                </ul>
+              </div>
+              
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="2s">
+                <div class="brand_letter">D</div>
+                <ul class="product_catalog_list APILIST" id="API-D">
+                </ul>
+              </div>
+            </div>
+        </div>
+      </section>
+      <section class="brands_list_block">
+        
+        <!-- CONTAINER -->
+        <div class="container">
+          
+          <!-- ROW -->
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="2s" style="visibility: inherit">
+              <div class="brand_letter">E</div>
+              <ul class="product_catalog_list APILIST" id="API-E">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">f</div>
+              <ul class="product_catalog_list APILIST" id="API-F">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">g</div>
+              <ul class="product_catalog_list APILIST" id="API-G">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">h</div>
+              <ul class="product_catalog_list APILIST" id="API-H">
+              </ul>
+            </div>
+          </div><!-- //ROW -->
+        </div><!-- //CONTAINER -->
+      </section><!-- //BRANDS LIST SECTION -->
+
+      <!-- BRANDS LIST SECTION -->
+      <section class="brands_list_block">
+        
+        <!-- CONTAINER -->
+        <div class="container">
+          
+          <!-- ROW -->
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">i</div>
+              <ul class="product_catalog_list APILIST" id="API-I">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">j</div>
+              <ul class="product_catalog_list APILIST" id="API-J">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">k</div>
+              <ul class="product_catalog_list APILIST" id="API-K">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">l</div>
+              <ul class="product_catalog_list APILIST" id="API-L">
+              </ul>
+            </div>
+          </div><!-- //ROW -->
+        </div><!-- //CONTAINER -->
+      </section><!-- //BRANDS LIST SECTION -->
+      <section class="brands_list_block">
+        
+        <!-- CONTAINER -->
+        <div class="container">
+          
+          <!-- ROW -->
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">m</div>
+              <ul class="product_catalog_list APILIST" id="API-M">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">n</div>
+              <ul class="product_catalog_list APILIST" id="API-N">            
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">o</div>
+              <ul class="product_catalog_list APILIST" id="API-O">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">p</div>
+              <ul class="product_catalog_list APILIST" id="API-P">
+              </ul>
+            </div>
+          </div><!-- //ROW -->
+        </div><!-- //CONTAINER -->
+      </section><!-- //BRANDS LIST SECTION -->
+      
+      
+      <!-- BRANDS LIST SECTION -->
+      <section class="brands_list_block">
+        
+        <!-- CONTAINER -->
+        <div class="container">
+          
+          <!-- ROW -->
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">q</div>
+              <ul class="product_catalog_list APILIST" id="API-Q">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">r</div>
+              <ul class="product_catalog_list APILIST" id="API-R">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">s</div>
+              <ul class="product_catalog_list APILIST" id="API-S">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">t</div>
+              <ul class="product_catalog_list APILIST" id="API-T">
+              </ul>
+            </div>
+          </div><!-- //ROW -->
+        </div><!-- //CONTAINER -->
+      </section><!-- //BRANDS LIST SECTION -->
+      
+      
+      <!-- BRANDS LIST SECTION -->
+      <section class="brands_list_block">
+        
+        <!-- CONTAINER -->
+        <div class="container">
+          
+          <!-- ROW -->
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">u</div>
+              <ul class="product_catalog_list APILIST" id="API-U">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">v</div>
+              <ul class="product_catalog_list APILIST" id="API-V">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter" style="padding-left: 0px;">w</div>
+              <ul class="product_catalog_list APILIST" id="API-W" style="padding-left: 50px;">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">x</div>
+              <ul class="product_catalog_list APILIST" id="API-X">
+              </ul>
+            </div>
+          </div><!-- //ROW -->
+        </div><!-- //CONTAINER -->
+      </section><!-- //BRANDS LIST SECTION -->
+      
+      
+      <!-- BRANDS LIST SECTION -->
+      <section class="brands_list_block">
+        
+        <!-- CONTAINER -->
+        <div class="container">
+          
+          <!-- ROW -->
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">y</div>
+              <ul class="product_catalog_list APILIST" id="API-Y">
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">z</div>
+              <ul class="product_catalog_list APILIST" id="API-Z">
+              </ul>
+            </div>
+            
+       <!-- /    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 col-ss-12 brand_list_item padbot40 clearfix wow fadeInUp api-list" data-wow-delay="0.3s" data-wow-duration="2s">
+              <div class="brand_letter">1</div>
+              <ul class="product_catalog_list APILIST" id="API-Num">
+              </ul>
+            </div> -->
+          </div><!-- //ROW -->
+        </div><!-- //CONTAINER -->
+      </section><!-- //BRANDS LIST SECTION -->
+    </div> 
     <h1 style="text-align: centre;">Select Suppliers</h1>
     <div> <div id='div_session_write'> </div>
       <div class="col-md-3"><div class="show_before" id="selectedApi1"></div></div>
@@ -110,7 +256,10 @@
     <div>
       <div id="valuesForm"></div>
     </div> 
-  </div>  <!-- End id=wizard --> 
+  </div>  <!-- End id=wizard -->
+ 
+
+
 </div> 
 </div> 
  <div  role="dialog" tabindex="-1" id="login-modal" class="modal modal-login">
@@ -162,12 +311,13 @@
                     </div>
                   </div>
                 </div>
-				</div>  
-				</div>  
-				</div> 
-				</div>  
-				</div> 
-				</div>  
+              
+    </div>  
+    </div>  
+    </div>  
+    </div>  
+    </div>  
+    </div>  
  <!-- Footer -->
  <?php include('footer.php'); ?>
   <!-- End Footer --> 
@@ -193,7 +343,7 @@
    ?>","<?php if(isset($_COOKIE['password'])){ echo $_COOKIE['password']; }else{echo "";}?>");
 });
 // new WOW().init();
-</script> 
+</script>
 <script type="text/javascript" src="/js/application/search_proank.js"></script>
 <script type="text/javascript" src="/js/application/ankcustm.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/async/1.4.0/async.js"></script>
@@ -215,22 +365,16 @@
 <script type="text/javascript" src="/js/wow.min.js"></script>
 <script type="text/javascript" src="/js/application/jquery.validate.js"></script>
 <script type="text/javascript" src="/js/application/popup.js"></script>
-<script type="text/javascript" src="/js/slidernav.js"></script>
+
  <script type="text/javascript">
-$(document).ready(function(){
- $('#nomo').click(function(){
-  $('#sido1').slideToggle(1000);
-  });
-  $('#nomo1').click(function(){
-  $('#sido1').slideToggle(1000);
-  });
-});  
-</script> 
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#slider').sliderNav();
-		$('#transformers').sliderNav({items:['autobots','decepticons'], debug: true, height: '300', arrows: false});
-	});
-</script>
+          $(document).ready(function(){
+            $('#nomo').click(function(){
+               $('#sido1').slideToggle(1000);
+             });
+             $('#nomo1').click(function(){
+               $('#sido1').slideToggle(1000);
+             });
+          });  
+      </script>
 </body>
 </html>
