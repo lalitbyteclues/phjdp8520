@@ -15,7 +15,7 @@ li#image1 {background-image: url('../images/Picture5.jpg');}
 .product_catalog_list {padding-left: 90px;}
 ul, ol {/*  padding: 23px;*/margin: auto;list-style-type: disc;}
 .row {margin-right: -15px;margin-left: -15px;padding: 20px 2px;}
-.product_catalog_list.APILIST {/*max-height: 250px;*/padding-left: 70px;margin-left: 20px;}
+.product_catalog_list.APILIST {/*max-height: 250px;*/padding-left:0px;margin-left:0px;}
 /*.styleClass {
   background-color: #131110;
   color: #fff;
@@ -44,7 +44,7 @@ div.col-md4.col-sm-4 {text-decoration: underline;}
 .wizard > .content > .body {float: left;height: 100%;overflow: auto;padding: 2.5%;position: absolute;}
 .wizard > .content {background: #fff none repeat scroll 0 0;}
 .wizard > .steps {margin-top: 20px;    }
-.wizard > .actions > ul {    margin-right: 610px;    }
+.wizard > .actions > ul {margin-right:50%;    }
 .wizard > .content > .body {float: left;height: 95%;padding: 2.5%;position: absolute;width: auto;}
 .wizard > .steps .number {/*font-size: 1.429em;*/ display: none; }
 .wizard > .steps .current a, .wizard > .steps .current a:hover, .wizard > .steps .current a:active {text-align: center;}

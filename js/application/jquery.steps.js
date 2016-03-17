@@ -1137,7 +1137,7 @@ function renderTitle(wizard, options, state, header, index)
             title: header.html()
         }),
         stepItem = $("<li role=\"tab\"><a id=\"" + uniqueStepId + "\" href=\"#" + uniqueHeaderId + 
-            "\" aria-controls=\"" + uniqueBodyId + "\">" + title + "</a></li>");
+            "\" aria-controls=\"" + uniqueBodyId + "\">" + title + "</a><div class='arrow'><i class='fa fa-arrow-right'></i></div></li>");
         
     stepItem._enableAria(options.enableAllSteps || state.currentIndex > index);
 

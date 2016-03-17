@@ -198,7 +198,7 @@ var _addapi = function (name, id, org_id) {
     if (index == -1) {
         selectedApis[name] = apis[name];
         selectedApis.push(name);
-        $('#link-' + id).css('background-color', "#131110");
+        $('#link-' + id).css('background-color', "#8e8e8e");
         $('#link-' + id).css('color', "#ffffff");
         selectedValues[name] = { "suppliers": [] };
     }
@@ -218,8 +218,7 @@ var _addapi = function (name, id, org_id) {
 
 function checkForSelectedApis() {
     return (selectedApis.length != 0);
-};
-
+}; 
 getSuppliers = function (name, callback) {
     $.ajax({
         type: "GET", url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/product?namelike=" + name + '&public=Y&limit=100', contentType: 'application/json', headers: { 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb', 'SPIDERG-Authorization': "SPIDERGAUTH " + "register" }
@@ -300,17 +299,17 @@ function makeRFQDataTemplate() {
             success: function (people) {
                 var final_loc = ' ';
                 if (people.length > 0) {
-                    final_loc += "<span style='margin-top: 10px;' class='col-md-2'>Address</span><select name='deliveryLocation[]' data-type='deliveryLocation' style='margin-top: 10px;' class='col-md-10'>";
+                    final_loc += "<span style='margin-top: 10px;' class='col-md-2'>Address</span><div class='col-md-10'><select name='deliveryLocation[]' data-type='deliveryLocation' style='margin-top: 10px;' class='col-md-10  form-control'>";
                     for (var j = 0; j < people.length; j++) {
                         var loc = "<option value='" + people[j].id + "'>" + people[j].addressline1 + " " + people[j].addressline2 + " " + people[j].city + " " + people[j].region + " " + people[j].postalcode + "</option>";
                         var final_loc = final_loc + loc;
-                    } final_loc += "</select>";
+                    } final_loc += "</select></div>";
                 }
                 var final_uom = '';
                 var myuomid = localStorage.getItem('myUOMDataID');
                 var myuomval = localStorage.getItem('myUOMDataVal');
                 if (myuomid != null || myuomval != null) {
-                    final_uom += "<span style='margin-top: 10px;' class='col-md-2'>Unit Of Measurement</span><select name='uompro[]' data-type='uompro' style='margin-top: 10px;' class='col-md-10'>";
+                    final_uom += "<span style='margin-top: 10px;' class='col-md-2'>Unit Of Measurement</span><div class='col-md-10'><select name='uompro[]' data-type='uompro' style='margin-top: 10px;' class='form-control'>";
                     myuomid1 = myuomid.split(',');
                     myuomval1 = myuomval.split(',');
                     for (var i = 0; i < myuomid1.length; i++) {
@@ -319,15 +318,15 @@ function makeRFQDataTemplate() {
                         var uom = "<option value='" + myuomid1[i] + "'>" + myuomval1[i] + "</option>";
                         var final_uom = final_uom + uom;
                     }
-                    final_uom += "</select>";
+                    final_uom += "</select></div>";
                 }
                 var suppliersSelectTemplate = "<span>##NAME##</span>";
                 var apiFormTemplate =
                 "<div class='col-md-12'><label class='col-md-12'>Product :##APINAME##</label>" +
                     "<p><b>Send TO</b>:##SUPPLIERS##</p>" +
-                    "<span  class='col-md-2'>Quantity</span> <input type='text' onkeypress='javascript:return isNumber(event)' class='col-md-10' data-type='quantity' style='margin-top: 10px;' name='quantity[]' placeholder='Enter Quantity...' required />" +
-                    "<span class='col-md-2'>Your Message</span><textarea  class='col-md-10' data-type='notes' style='margin-top: 10px;' name='notes[]' placeholder='Delivery notes...'></textarea> " +
-                    "" + final_loc + "" + "" + final_uom + "<span  class='col-md-2'>&nbsp;</span> <a href='#' style='margin-top: 10px;' class='btn btn-primary col-md-8' onclick='saveDataInputs()'>Send Inquiry</a></div>";
+                    "<span  class='col-md-2'>Quantity</span><div class='col-md-10'> <input type='text' onkeypress='javascript:return isNumber(event)' class='form-control' data-type='quantity' style='margin-top: 10px;' name='quantity[]' placeholder='Enter Quantity...' required /></div>" +
+                    "<span class='col-md-2'>Your Message</span><div class='col-md-10'><textarea  class='form-control' data-type='notes' style='margin-top: 10px;' name='notes[]' placeholder='Delivery notes...'></textarea></div>" +
+                    "" + final_loc + "" + "" + final_uom + "<span  class='col-md-2'>&nbsp;</span><div class='col-md-10'> <a href='#' style='margin-top: 10px;' class='btn btn-primary' onclick='saveDataInputs()'>Send Inquiry</a></div></div>";
                 var allApis = Object.keys(selectedValues);
 
                 var formHtml = "";

@@ -275,8 +275,12 @@ jQuery(function($) {
             jQuery(".subDropdown")[0] && jQuery(".subDropdown").on("click", function() {
                 jQuery(this).toggleClass("plus"), jQuery(this).toggleClass("minus"), jQuery(this).parent().find("ul").slideToggle()
             })
-        }), jQuery(window).scroll(function() {
-            jQuery(this).scrollTop() > 1 ? jQuery("nav").addClass("sticky") : jQuery("nav").removeClass("sticky")
+        }), jQuery(window).scroll(function() { 
+		
+            $(this).scrollTop() > 1 ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
+			console.log("height"+$(window).height()+"scroller"+$(window).scrollTop()+"persentage:"+(($(window).height() - $(window).scrollTop())/$(window).height())*100); 
+			console.log((((($(window).height() - $(window).scrollTop())/$(window).height())*100) > -55 && ((($(window).height() - $(window).scrollTop())/$(window).height())*100) < -23 ));
+           ($(window).height()<568)?((((($(window).height() - $(window).scrollTop())/$(window).height())*100) > -55 && ((($(window).height() - $(window).scrollTop())/$(window).height())*100) < -23 )? $("#wizard .actions").addClass("stickybottom") : $("#wizard .actions").removeClass("stickybottom")):(((($(window).height() - $(window).scrollTop())/$(window).height())*100) > 90 ? $("#wizard .actions").addClass("stickybottom") : $("#wizard .actions").removeClass("stickybottom"));
         }),
 		/*  To Top */
         function(e) {

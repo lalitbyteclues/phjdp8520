@@ -109,7 +109,9 @@ legend {display: none;}
 }
 .col3-layout .col-wrapper {float: left;width: 780px;}
 .col3-layout .col-wrapper .col-main {float: right;}
-
+.stickybottom{position: fixed !important;margin-bottom: 0px;z-index: 10000;display: block;bottom: 0px;	height: 36px;width: 100%;height: 44px;    background: #eee;
+    opacity: 1;}
+.stickybottom ul{margin-right:59%!important;}
 
 
 /*.main-container {min-height: 250px;padding: 20px 0 0px;}*/
@@ -346,8 +348,8 @@ a.block-currency:focus {
 .menuf1:hover {border-radius: 20%;background-color: #000;padding: 20px;border:2px solid #000;color: #fff;transition:all 250ms linear 0s;font-size: 1em !important;font-size:13px !important;}
 .menuf1:hover img {border-radius: 38%;transition:all 350ms linear 0s;}
 .menuf1:hover p {color: #fff;}
-.content {background-color:transparent;padding: 20px;text-align: center;}
-.content:hover {background-color: #000;transition:all 500ms linear 0s;  padding: 20px;color: #fff;}
+.content {background-color:transparent;padding: 0px;text-align: center;}
+.content:hover {background-color: #000;transition:all 500ms linear 0s;  padding: 0px;color: #fff;}
 .content:hover .icon-truck{color: #fff !important;} 
 .content:hover .icon-support{color: #fff !important;} 
 .content:hover .icon-money{color: #fff !important;} 
@@ -9054,7 +9056,7 @@ border-top: 2px solid #000;
 .line ul li a {font-size: 9px !important;}
 #mobile-menu .toggle {margin-left:12px;}
 .copy {text-align: center;}
-.footer-logo {text-align: center;border-bottom: 3px solid #fff;line-height: 3;} 	
+.footer-logo {text-align: center;border-bottom: 3px solid #fff;line-height: 3;padding-bottom:5px;} 	
 .contacts-info address {font-size: 8.2px;}
 .coppyright {font-size: 8.2px;text-align: center;}
 .footer-middle h4 {padding: 10px;}
@@ -9200,7 +9202,7 @@ nav {
 	border: none;
 	height: 30px;
 	margin: 0;
-	padding: 3px 6px;
+	padding:22px 6px;
 	width: 100%;
 	font-size: 12px;
 	border: 1px #666 solid;
@@ -10305,7 +10307,7 @@ ol#compare-items li a.product-name {
 }
 #search {
 	/*width: 75%;*/
-	width: 78%;
+	width: 100%;
 }
 .search-btn-bg {
 }
