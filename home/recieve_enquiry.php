@@ -141,7 +141,7 @@
         if ($.grep(partnerlist, function (category) { return category.id == peoplesingle.senderorg }).length == 0) {
             if (peoplesingle.senderorg) {
                 $.ajax({
-                    type: "GET", url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org?orgid=" + peoplesingle.senderorg, contentType: 'application/json', headers: { 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb', 'SPIDERG-Authorization': "SPIDERGAUTH " + createAuthenticationHeader(username, password, loginToken, loginTokenTS) }, success: function (data) {
+                    type: "GET", url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org?extensionid=7D6AACFA15614E1CBE3626B7513191F0&orgid=" + peoplesingle.senderorg, contentType: 'application/json', headers: { 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb', 'SPIDERG-Authorization': "SPIDERGAUTH " + createAuthenticationHeader(username, password, loginToken, loginTokenTS) }, success: function (data) {
                         mydata = data;
                         partnerlist.push(mydata);
                         var partnername = mydata.name;
@@ -231,7 +231,7 @@ function mySetTableData(param_flag)
       var loginTokenTS = spiderG['loginTokenTS'];
       $.ajax({
         type: "GET",
-        url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org?orgid="+sender_org,
+        url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org?extensionid=7D6AACFA15614E1CBE3626B7513191F0&orgid="+sender_org,
         contentType:'application/json',
         headers: { 
                 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb',

@@ -112,6 +112,7 @@
             {
                   loginToken = spiderG['loginToken'];
                   loginTokenTS = spiderG['loginTokenTS'];
+				    setInterval(function () { spiderG.getLoginToken(username, function () { loginToken = spiderG['loginToken']; loginTokenTS = spiderG['loginTokenTS']; }); }, 100000);
                 $.ajax({type:"GET",url:"http://vpn.spiderg.com:8081/SpiderGAPIServer/api/purchaseorder",contentType:'application/json',headers:{'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb','SPIDERG-Authorization': "SPIDERGAUTH "+ createAuthenticationHeader(username,password,loginToken,loginTokenTS)},success: function (data){
                     people = data; 
 						if(people.length>0){  
@@ -134,12 +135,8 @@ if(tttt< people.length) {
 		}
 	});
  }
- function customcall(peoplesingle,callback) {  
- spiderG.getLoginToken(username, function()
-   { 
-loginToken = spiderG['loginToken'];
- loginTokenTS = spiderG['loginTokenTS']; }); 
- $.ajax({type:"GET",url:"http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org?orgid="+peoplesingle.bpartner,contentType:'application/json',headers:{'SPIDERG-API-Key':'e5e3b300-31e9-4ad2-a705-4f8935218fcb','SPIDERG-Authorization': "SPIDERGAUTH "+ createAuthenticationHeader(username,password,loginToken,loginTokenTS)},success:function(data){
+ function customcall(peoplesingle,callback) {   
+ $.ajax({type:"GET",url:"http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org?extensionid=7D6AACFA15614E1CBE3626B7513191F0&orgid="+peoplesingle.bpartner,contentType:'application/json',headers:{'SPIDERG-API-Key':'e5e3b300-31e9-4ad2-a705-4f8935218fcb','SPIDERG-Authorization': "SPIDERGAUTH "+ createAuthenticationHeader(username,password,loginToken,loginTokenTS)},success:function(data){
   people1 = data; 
   if(peoplesingle.lineitems.length>0){
 	   $.ajax({type:"GET",url:"http://vpn.spiderg.com:8081/SpiderGAPIServer/api/product/"+peoplesingle.lineitems[0].product,contentType:'application/json',headers:{'SPIDERG-API-Key':'e5e3b300-31e9-4ad2-a705-4f8935218fcb','SPIDERG-Authorization': "SPIDERGAUTH "+ createAuthenticationHeader(username,password,loginToken,loginTokenTS)},success: function (productresponse){
@@ -172,7 +169,7 @@ callback(); }
       var loginTokenTS = spiderG['loginTokenTS'];
 		$.ajax({
             type: "GET",
-            url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org?orgid="+org_id,
+            url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org?extensionid=7D6AACFA15614E1CBE3626B7513191F0&orgid="+org_id,
             contentType:'application/json',
             headers: { 
                     'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb',

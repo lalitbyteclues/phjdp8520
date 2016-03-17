@@ -587,6 +587,6 @@ LatestTweets.init();
       <script>
          new WOW().init();
       </script>
-
+      <link rel="stylesheet" href="/css/grid.css" type="text/css">
    </body>
 </html>

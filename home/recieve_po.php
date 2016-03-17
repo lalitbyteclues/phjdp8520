@@ -149,7 +149,7 @@ var saveDataInputs = function() { customcall(people[tttt],function(){
                       {
 					  if($.grep(senderorglist,function (category){return category.id == peoplesingle.senderorg }).length==0)
 					 {
-						 $.ajax({type: "GET",url:"http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org?orgid="+peoplesingle.senderorg,contentType:'application/json',headers:{'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb','SPIDERG-Authorization': "SPIDERGAUTH "+ createAuthenticationHeader(username,password,loginToken,loginTokenTS)},success: function (mydata){ 
+						 $.ajax({type: "GET",url:"http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org?extensionid=7D6AACFA15614E1CBE3626B7513191F0&orgid="+peoplesingle.senderorg,contentType:'application/json',headers:{'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb','SPIDERG-Authorization': "SPIDERGAUTH "+ createAuthenticationHeader(username,password,loginToken,loginTokenTS)},success: function (mydata){ 
 					   senderorglist.push({id:peoplesingle.senderorg,name:mydata.name});
 					    $.ajax({type:"GET",url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/purchaseorder/"+peoplesingle.documentid,contentType:'application/json',headers:{'SPIDERG-API-Key':'e5e3b300-31e9-4ad2-a705-4f8935218fcb','SPIDERG-Authorization': "SPIDERGAUTH "+ createAuthenticationHeader(username,password,loginToken,loginTokenTS)},success: function (poresponse){ 
 					   if(poresponse.lineitems.length>0){
@@ -213,7 +213,7 @@ function mySetTableData(param_flag)
       var loginTokenTS = spiderG['loginTokenTS'];
       $.ajax({
         type: "GET",
-        url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org?orgid="+sender_org,
+        url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org?extensionid=7D6AACFA15614E1CBE3626B7513191F0&orgid="+sender_org,
         contentType:'application/json',
         headers: { 
                 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb',

@@ -9,8 +9,7 @@
       <!-- CSS Style -->
       <link rel="stylesheet" href="/css/bootstrap.min.css" type="text/css">
       <link rel="stylesheet" href="/css/style.css" type="text/css">
-      <link rel="stylesheet" href="/css/revslider.css" type="text/css">
-      <link rel="stylesheet" href="/css/grid.css" type="text/css">
+      <link rel="stylesheet" href="/css/revslider.css" type="text/css"> 
       <link rel="stylesheet" href="/css/mainstyle.css" type="text/css">
       <link rel="stylesheet" href="/css/owl.carousel.css" type="text/css">
       <link rel="stylesheet" href="/css/owl.theme.css" type="text/css">  

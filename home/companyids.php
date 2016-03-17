@@ -180,7 +180,7 @@ savelocation();
 		$(".se-pre-con").fadeIn("slow"); 
               var loginToken = spiderG['loginToken'];
               var loginTokenTS = spiderG['loginTokenTS'];
-              $.ajax({type: "GET",url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org/identity/type",headers: { 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb','SPIDERG-Authorization': "SPIDERGAUTH "+ createAuthenticationHeader(username,password,loginToken,loginTokenTS)},success: function (data) 
+              $.ajax({type: "GET",url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/org/identity/type?extensionid=7D6AACFA15614E1CBE3626B7513191F0",headers: { 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb','SPIDERG-Authorization': "SPIDERGAUTH "+ createAuthenticationHeader(username,password,loginToken,loginTokenTS)},success: function (data) 
                 {
                   people = data; 
 				   $('#country').append('<option value="">Select Identity Type</option>');  

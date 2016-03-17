@@ -231,9 +231,15 @@ $(document).ready(function() {
 function loadProjects(productdata,loginToken,loginTokenTS, callback)
 {
 $("#catdrpdwn option").filter(function() {return $(this).text() == productdata.category_id;}).prop('selected', true);
-$("#drpdwn option").filter(function() {return $(this).text() == productdata.uom;}).prop('selected', true);					
+$("#drpdwn option").filter(function() {return $(this).text() == productdata.uom;}).prop('selected', true);	
+$catid="";
+if($.grep(categorylistparsed,function (category){return category.name == productdata.category_id }).length>0)
+	{ $catid=$.grep(categorylistparsed,function (category){return category.name == productdata.category_id })[0].id;
+	}else{ 
+		$catid=$("#catdrpdwn").val();
+	}	
 var product ={"ispurchased":productdata.ispurchased,"issold":productdata.issold,"ispublic":productdata.ispublic
-					,"name":productdata.name,"uom":$("#drpdwn").val(),"category_id":$("#catdrpdwn").val(),"sku":productdata.sku
+					,"name":productdata.name,"uom":$("#drpdwn").val(),"category_id":$catid,"sku":productdata.sku
 					,"upc":productdata.upc,"notes":productdata.notes,};
 			var objectDataString = JSON.stringify(product);
 	    	 
@@ -301,7 +307,7 @@ var password = "<?php echo $_COOKIE['password']; ?>";
         <!-- textarea resize -->
         <script src="js/textarea/autosize.min.js"></script>
         <script>
-            autosize($('.resizable_textarea'));
+           // autosize($('.resizable_textarea'));
         </script>
         <!-- Autocomplete -->
         <script type="text/javascript" src="js/autocomplete/countries.js"></script>
@@ -313,59 +319,28 @@ var password = "<?php echo $_COOKIE['password']; ?>";
         <script type="text/javascript" src="../js/parsley.js"></script>
         <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
         <script type="text/javascript">
-        $( document ).ready(function() {
-            var username = "<?php echo $_SESSION['user_email']; ?>";
-            var password = "<?php echo $_COOKIE['password']; ?>";
-            spiderG.getLoginToken(username, function()
-            { var loginToken = spiderG['loginToken'];
-                var loginTokenTS = spiderG['loginTokenTS'];
- $.ajax({type: "GET",url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/uom",contentType:'application/json',headers:{'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb','SPIDERG-Authorization': "SPIDERGAUTH "+ createAuthenticationHeader(username,password,loginToken,loginTokenTS)},success: function (data)
-  { people = data; 
-  for(var j=0; j< people.length; j++)
-  { $('#drpdwn').append('<option value="'+ people[j].id +'">'+ people[j].name +'</option>');}
-                },
-            error: function (err) {
-            console.log(err);
-             
-            }
-        });
-        });
- });
-
-        $( document ).ready(function()
-        {
-            var username = "<?php echo $_SESSION['user_email']; ?>";
-            var password = "<?php echo $_COOKIE['password']; ?>";
-            spiderG.getLoginToken(username, function()
-            {
-                var loginToken = spiderG['loginToken'];
-                var loginTokenTS = spiderG['loginTokenTS'];
-
-                $.ajax({
-                    type: "GET",
-                    url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/product/category",
-                    contentType:'application/json',
-                    headers: { 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb',
-                           'SPIDERG-Authorization': "SPIDERGAUTH "+ createAuthenticationHeader(username,password,loginToken,loginTokenTS)
-                      },
-         
-            success: function (data){
-                people = data; 
-               for(var j=0; j< people.length; j++)
-               {
-                    $('#catdrpdwn').append('<option value="'+ people[j].id +'">'+ people[j].name +'</option>');
-               }
+      $(document).ready(function () { 
+    var username = "<?php echo $_SESSION['user_email']; ?>";
+    var password = "<?php echo $_COOKIE['password']; ?>";
+    spiderG.getLoginToken(username, function () {  
+        var loginToken = spiderG['loginToken'];
+        var loginTokenTS = spiderG['loginTokenTS'];
+        $.ajax({
+            type: "GET", url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/uom", contentType: 'application/json', headers: { 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb', 'SPIDERG-Authorization': "SPIDERGAUTH " + createAuthenticationHeader(username, password, loginToken, loginTokenTS) }, success: function (data) {
+                 for (var j = 0; j < categorylistparsed.length; j++) {
+                    $('#catdrpdwn').append('<option value="' + categorylistparsed[j].id + '">' + categorylistparsed[j].name + '</option>');
+                    } 
+				people = data;
+                for (var j = 0; j < people.length; j++)
+                { $('#drpdwn').append('<option value="' + people[j].id + '">' + people[j].name + '</option>'); }
             },
             error: function (err) {
-            console.log(err);
-            
+                console.log(err);
+
             }
         });
-      
-        });
- });
-
-
+    });
+}); 
 <?php  include 'src/Cloudinary.php';
  include 'src/Uploader.php'; 
  include 'src/settings.php'; 
