@@ -36,7 +36,7 @@ border: 0px solid #000000;	height: 143px;padding: 42px;width: 64%;background: #8
 .wizard.vertical > .content{display: inline;float: left;margin: 0 2.5% 0.5em 2.5%;width: 65%;}
 .wizard > .content > .body{float: left;position: absolute;width: 100%;height: 95%;padding:0;}
 .wizard > .content > .body ul{list-style: disc !important;}
-.wizard > .content > .body ul > li{display: list-item;}
+.wizard > .content > .body ul > li{display: list-item;text-align:left;}
 .wizard > .content > .body > iframe{border: 0 none;width: 100%;height: 100%;}
 .wizard > .content > .body input{display: block;border: 1px solid #ccc;}
 .wizard > .content > .body input[type="checkbox"]{display: inline-block;}
@@ -76,19 +76,19 @@ border: 0px solid #000000;	height: 143px;padding: 42px;width: 64%;background: #8
 .wizard > .actions > ul{margin-right:0px;}
 .valuesForm  span{float:left;width:100%;} 
 .wizard > .steps .disabled a,.wizard > .steps .disabled a:hover,.wizard > .steps .disabled a:active
-{height: 159px;padding: 52px;width: 100%;} 
+{height:146px;padding: 47px;width: 65%;} 
 .wizard > .steps .current a,.wizard > .steps .current a:hover,.wizard > .steps .current a:active{
-height: 159px;padding: 52px;width: 100%;}
+height: 146px;padding: 47px;width: 66%;}
 .wizard  .arrow{float: left;padding:62px 0 0 8%;width:100%;height:0px;}  
 .wizard > .steps .done a,.wizard > .steps .done a:hover,.wizard > .steps .done a:active{
-height: 159px;padding: 52px;width: 100%;
+height: 146px;padding:47px;width: 66%;
 } 
 footer{padding-top:0px;}
 .wizard  .arrow  .fa{transform: rotate(90deg) ;
 -webkit-transform: rotate(90deg) ;
 -moz-transform: rotate(90deg) ;
 -o-transform: rotate(90deg) ;
--ms-transform: rotate(90deg) ;height:25px; }
+-ms-transform: rotate(90deg) ;height:25px; padding:54px 0 0 10%;}
 }
 @media (min-width:768px) and (max-width:900px) {  
 .wizard > .steps .disabled a,.wizard > .steps .disabled a:hover,.wizard > .steps .disabled a:active

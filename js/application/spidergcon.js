@@ -48,8 +48,7 @@ $(function () {
             }
             if (currentIndex == 1 && newIndex == 2) {
                 var productcount = 0;
-                var supplierscount = 0;
-                console.log(selectedValues);
+                var supplierscount = 0; 
                 for (property in selectedValues) {
                     if (selectedValues[property]["suppliers"].length !== 0) {
                         if (supplierscount == 0) {
@@ -99,6 +98,10 @@ $(function () {
         onStepChanged: function (event, currentIndex, priorIndex) {
             if (currentIndex == 1 && priorIndex == 0) {
                 supplierIndex = 0;
+				$("#selectedApi1").html("");
+				$("#selectedApi2").html("");
+				$("#selectedApi3").html("");
+				$("#selectedApi4").html(""); 
                 localStorage.setItem('sess_orgid', ''); $(".se-pre-con").fadeIn("slow");
                 async.eachSeries(selectedApis, getSuppliers, function (err, result) {
                     $('.tick').on('click', addSupplier);
@@ -129,6 +132,7 @@ $(function () {
 
 /* Make GET request for API's List */
 function getAPIs(searchitem, categoryid, username, password) {
+	$("#slider").css('visibility', 'hidden');
     $(".se-pre-con").fadeIn("slow");
     if (categoryid != "") {
         var pro_url = "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/product?category_id=" + categoryid + "&public=Y&limit=100000&unique=Y";
@@ -149,7 +153,9 @@ function getAPIs(searchitem, categoryid, username, password) {
 						try { 
 							$("#API-" + capital_letter).append("<li><a href=\"javascript:void(0);\" class=\"apiLink\" id=\"link-" + people[j].id + "\" onClick=\"_addapi('" + people[j].name.replace('\n','') + "','" + people[j].id + "','" + people[j].spg_org_id + "')\">" + people[j].name.replace('\n','') + "</a></li>");
 						}
-					catch(err) { } 
+					catch(err) { }
+						$("#slider").css('visibility', 'visible');					
+						$("#productloader").fadeOut();					
                     } }
                 $(".se-pre-con").fadeOut("slow");
 
@@ -189,18 +195,26 @@ var _addapi = function (name, id, org_id) {
     }
     else {
         if (sessid.indexOf(id) == -1) {
-            localStorage.setItem('sess_name', (sessname + ',' + name));
-            localStorage.setItem('sess_id', (sessid + ',' + id));
-            localStorage.setItem('sess_orgid', (sessorgid + ',' + org_id));
-        }
+			if (selectedApis.length < 4) 
+			{
+				localStorage.setItem('sess_name', (sessname + ',' + name));
+				localStorage.setItem('sess_id', (sessid + ',' + id));
+				localStorage.setItem('sess_orgid', (sessorgid + ',' + org_id));
+			}
+		}
     }
     var index = selectedApis.indexOf(name);
     if (index == -1) {
+		 if (selectedApis.length < 4) 
+		 {
         selectedApis[name] = apis[name];
         selectedApis.push(name);
         $('#link-' + id).css('background-color', "#8e8e8e");
         $('#link-' + id).css('color', "#ffffff");
-        selectedValues[name] = { "suppliers": [] };
+		 selectedValues[name] = { "suppliers": [] };
+		 }else{
+			  alert("You can not select more than Four APIs.Please select the Suppliers");
+		 }
     }
     else {
         selectedApis.splice(index, 1);
@@ -208,22 +222,28 @@ var _addapi = function (name, id, org_id) {
         $('#link-' + id).css('color', "#131110");
     }
     /* allow only four apis to add */
-    if (selectedApis.length == 5) {
-        selectedApis.splice(4, 1);
-        alert("You can not select more than Four APIs.Please select the Suppliers");
+    //if (selectedApis.length == 5) {
+        //selectedApis.splice(4, 1);
+        //alert("You can not select more than Four APIs.Please select the Suppliers");
         /* trigger click event after selecting four apis */
-        $('a[href="#next"]').trigger('click');
-    }
+        //$('a[href="#next"]').trigger('click');
+    //}
 }
-
+function sortResults(prop, asc) {
+    people = people.sort(function(a, b) {
+        if (asc) return (a[prop] > b[prop]) ? 1 : ((a[prop] < b[prop]) ? -1 : 0);
+        else return (b[prop] > a[prop]) ? 1 : ((b[prop] < a[prop]) ? -1 : 0);
+    }); 
+}
 function checkForSelectedApis() {
     return (selectedApis.length != 0);
 }; 
 getSuppliers = function (name, callback) {
     $.ajax({
         type: "GET", url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/product?namelike=" + name + '&public=Y&limit=100', contentType: 'application/json', headers: { 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb', 'SPIDERG-Authorization': "SPIDERGAUTH " + "register" }
-    , success: function (data) {
+    , success: function (data) { 
         people = data;
+		sortResults('spg_org_id', true);
         var org_id = "";
         var supplierList = "";
         var counternoofcalls = 0;
@@ -708,7 +728,6 @@ function customcall(myordid, callback) {
         var loginToken = spiderG['loginToken'];
         var loginTokenTS = spiderG['loginTokenTS'];
         $.ajax({type:"POST",url:"http://vpn.spiderg.com:8081/SpiderGAPIServer/api/rfq",data:str,contentType:'application/json',dataType: 'text',headers:{'SPIDERG-API-Key':'e5e3b300-31e9-4ad2-a705-4f8935218fcb','SPIDERG-Authorization': "SPIDERGAUTH " + createAuthenticationHeader(username, password, loginToken, loginTokenTS)},success: function (data){
-				console.log(data);
 				rfqid = data; 
                     var rfqitem = { "rfqid": rfqid, "lineno": "1", "product": myprid, "quantity": qty, "uom": uom, "notes": dnoes };
                     var strrfqitem = JSON.stringify(rfqitem);
@@ -748,7 +767,6 @@ function addSupplier(event) {
         selectedValues[_api]["suppliers"].push(_supplier);
     else
         selectedValues[_api]["suppliers"].splice(index, 1);
-
 
     var sessorgid = localStorage.getItem('sess_orgid');
     if (sessorgid == null || sessorgid == '') {
