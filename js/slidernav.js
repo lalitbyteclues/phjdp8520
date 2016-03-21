@@ -5,8 +5,11 @@
  *  More information: http://devgrow.com/slidernav
  */
 $.fn.sliderNav = function(options) {
-	var defaults = { items: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"], debug: false, height: null, arrows: true, event: 'mouseover'};
-	var opts = $.extend(defaults, options); var o = $.meta ? $.extend({}, opts, $$.data()) : opts; var slider = $(this); $(slider).addClass('slider');
+	var defaults = {items: ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"],
+	debug: false, height: null, arrows: true, 
+	event: 'click'};
+	var opts = $.extend(defaults, options); var o = $.meta ? $.extend({}, opts, $$.data()) : opts; 
+	var slider = $(this); $(slider).addClass('slider');
 	$('.slider-content li:first', slider).addClass('selected');
 	$(slider).append('<div class="slider-nav"><ul></ul></div>');
 	for(var i in o.items) $('.slider-nav ul', slider).append("<li><a alt='#"+o.items[i]+"'>"+o.items[i]+"</a></li>");
