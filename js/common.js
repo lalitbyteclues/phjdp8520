@@ -278,7 +278,9 @@ jQuery(function($) {
         }), jQuery(window).scroll(function() { 
 		
             $(this).scrollTop() > 1 ? $("nav").addClass("sticky") : $("nav").removeClass("sticky");
-			($(window).height()<568)?((((($(window).height() - $(window).scrollTop())/$(window).height())*100) > -55 && ((($(window).height() - $(window).scrollTop())/$(window).height())*100) < -23 )? $("#wizard .actions").addClass("stickybottom") : $("#wizard .actions").removeClass("stickybottom")):(((($(window).height() - $(window).scrollTop())/$(window).height())*100) > 90 ? $("#wizard .actions").addClass("stickybottom") : $("#wizard .actions").removeClass("stickybottom"));
+			console.log("height"+$(window).height()+"scroller"+$(window).scrollTop()+"persentage:"+(($(window).height() - $(window).scrollTop())/$(window).height())*100); 
+			console.log((((($(window).height() - $(window).scrollTop())/$(window).height())*100) > -55 && ((($(window).height() - $(window).scrollTop())/$(window).height())*100) < -23 ));
+           ($(window).height()<568)?((((($(window).height() - $(window).scrollTop())/$(window).height())*100) > -55 && ((($(window).height() - $(window).scrollTop())/$(window).height())*100) < -23 )? $("#wizard .actions").addClass("stickybottom") : $("#wizard .actions").removeClass("stickybottom")):(((($(window).height() - $(window).scrollTop())/$(window).height())*100) > 90 ? $("#wizard .actions").addClass("stickybottom") : $("#wizard .actions").removeClass("stickybottom"));
         }),
 		/*  To Top */
         function(e) {

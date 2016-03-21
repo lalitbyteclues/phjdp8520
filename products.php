@@ -14,8 +14,7 @@
   <div id="wizard">
     <h1>Select Products</h1>
 <div>
-<img src="/tinymce/skins/lightgray/img/loader.gif" id="productloader">
-<div id="slider"> 
+<div id="slider">
 	<div class="slider-content">
 	 <ul><li id="a"><a name="a" class="title">A</a>
 	 <ul id="API-A"></ul>
