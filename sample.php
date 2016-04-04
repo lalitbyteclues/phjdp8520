@@ -319,22 +319,7 @@
     </div>  
     </div>  
  <!-- Footer -->
- <?php include('footer.php'); ?>
-  <!-- End Footer --> 
-<div class="social">
-         <ul>
-            <li class="fb"><a href="https://www.facebook.com/pharmerzz" target="_blank" ></a></li>
-            <li class="tw"><a href="https://twitter.com/PharmerzT" target="_blank" ></a></li>
-            <li class="googleplus"><a href="#" target="_blank" ></a></li>
-            <li class="rss"><a href="#" target="_blank" ></a></li>
-            <li class="pintrest"><a href="#" target="_blank" ></a></li>
-            <li class="linkedin"><a href="https://www.linkedin.com/company/pharmerz" target="_blank" ></a></li>
-            <li class="youtube"><a href="https://www.youtube.com/channel/UC6C1uwIbZEziq8rfN-qW0-A" target="_blank" ></a></li>
-         </ul>
-      </div>
-
-<!-- JavaScript --> 
-<script type="text/javascript" src="/js/jquery.min.js"></script>
+ <?php include('footer.php'); ?> 
 <script>
  $( document ).ready(function() {
   var searchitem = "<?php if(isset($_GET['namelike'])){ echo $_GET['namelike']; }else{echo "";}?>"
@@ -344,37 +329,6 @@
 });
 // new WOW().init();
 </script>
-<script type="text/javascript" src="/js/application/search_proank.js"></script>
-<script type="text/javascript" src="/js/application/ankcustm.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/async/1.4.0/async.js"></script>
-<script type="text/javascript" src="/js/application/jquery.steps.js"></script>
-<script type="text/javascript" src="/js/application/intlTelInput.min.js"></script>
-<script type="text/javascript" src="/js/application/sweetalert.min.js"></script>
-<script type="text/javascript" src="/js/application/buyers.js"></script>
-<script type="text/javascript" src="/js/application/custom.js"></script>
-<script type="text/javascript" src="/js/application/spidergcon.js"></script>
-<script type="text/javascript" src="/js/application/loginForm.js"></script>
-<script type="text/javascript" src="/js/jquery-ui.min.js"></script> 
-<script type="text/javascript" src="/js/bootstrap.min.js"></script>
-<script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
-<script type="text/javascript" src="/js/application/modernizr.js"></script> 
-<script type="text/javascript" src="/js/common.js"></script> 
-<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-<script src="/js/superfish.min.js" type="text/javascript"></script>
-<!-- <script src="/js/myscript.js" type="text/javascript"></script> -->
-<script type="text/javascript" src="/js/wow.min.js"></script>
-<script type="text/javascript" src="/js/application/jquery.validate.js"></script>
-<script type="text/javascript" src="/js/application/popup.js"></script>
-
- <script type="text/javascript">
-          $(document).ready(function(){
-            $('#nomo').click(function(){
-               $('#sido1').slideToggle(1000);
-             });
-             $('#nomo1').click(function(){
-               $('#sido1').slideToggle(1000);
-             });
-          });  
-      </script>
+  
 </body>
 </html>

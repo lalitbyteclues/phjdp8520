@@ -151,7 +151,7 @@ function getAPIs(searchitem, categoryid, username, password) {
 					    var first_letter = (people[j].name.replace('4','').replace('4','').replace('1 ','').replace('1-','').replace('2 ','').replace('2-','').replace('3 ','').replace('3-','').replace('5 ','').replace('5-','').replace('6 ','').replace('6-','').replace('7 ','').replace('7-','').replace('8 ','').replace('8-','').replace('9 ','').replace('9-','').replace('(','').replace('[','').replace('-','').replace(' ','').replace('[',''))[0];
                         var capital_letter = first_letter.toUpperCase(); 
 						try { 
-							$("#API-" + capital_letter).append("<li><a href=\"javascript:void(0);\" class=\"apiLink\" id=\"link-" + people[j].id + "\" onClick=\"_addapi('" + people[j].name.replace('\n','') + "','" + people[j].id + "','" + people[j].spg_org_id + "')\">" + people[j].name.replace('\n','') + "</a></li>");
+							$("#API-" + capital_letter).append("<li><a href=\"javascript:void(0);\" class=\"apiLink\" id=\"link-" + people[j].id + "\" onClick=\"_addapi('" + people[j].name.replace('\n','') + "','" + people[j].id + "','" + people[j].spg_org_id + "')\">" + people[j].name.replace('\n','') + "<input class='squaredThree' type='checkbox' ></a></li>");
 						}
 					catch(err) { }
 						$("#slider").css('visibility', 'visible');					
@@ -210,9 +210,11 @@ var _addapi = function (name, id, org_id) {
         selectedApis[name] = apis[name];
         selectedApis.push(name);
         $('#link-' + id).css('background-color', "#8e8e8e");
-        $('#link-' + id).css('color', "#ffffff");
+        $('#link-' + id).css('color', "#ffffff"); 
+		$('#link-' + id+' input').prop('checked', true);
 		 selectedValues[name] = { "suppliers": [] };
 		 }else{
+			 $('#link-' + id+' input').prop('checked', false);
 			  alert("You can not select more than Four APIs.Please select the Suppliers");
 		 }
     }
@@ -220,6 +222,7 @@ var _addapi = function (name, id, org_id) {
         selectedApis.splice(index, 1);
         $('#link-' + id).css('background-color', "#ffffff");
         $('#link-' + id).css('color', "#131110");
+		$('#link-' + id+' input').prop('checked', false);
     }
     /* allow only four apis to add */
     //if (selectedApis.length == 5) {
@@ -370,7 +373,7 @@ function makeRFQDataTemplate() {
                         formHtml += currentTemplate;
                         i++;
                     } else {
-                        delete selectedValues[api];
+                        //delete selectedValues[api];
                         var sessname = localStorage.getItem('sess_name');
                         var sessid = localStorage.getItem('sess_id');
                         myprodarr = sessname.split(',');
@@ -759,7 +762,7 @@ function customcall(myordid, callback) {
         });
     });
 }
-function addSupplier(event) {
+function addSupplier(event) { 
     var _supplier = event.target.name;
     var _api = event.target.parentElement.parentElement.parentElement.firstChild.textContent;
     var index = selectedValues[_api]["suppliers"].indexOf(_supplier);

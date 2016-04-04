@@ -1,0 +1,107 @@
+.flexdropdownmenu, .flexdropdownmenu ul{ font: normal 13px Verdana;margin: 0;padding: 0;position: absolute;left: 0;top:0;list-style-type: none;
+border: 2px solid #323b40;border-bottom-width: 0;visibility: hidden;display: none;box-shadow: 3px 3px 8px #818181;
+-webkit-box-shadow: 3px 3px 8px #818181;-moz-box-shadow: 3px 3px 8px #818181;} 
+
+
+
+.flexdropdownmenu:after,.flexdropdownmenu:before {bottom: 100%;left:25%;border: solid transparent;content:" ";height: 0;width: 0;position: absolute;	pointer-events: none;}
+.flexdropdownmenu:after {border-color: rgba(111, 149, 173, 0);border-bottom-color: #000;border-width: 12px;}
+.flexdropdownmenu:before {border-color: rgba(50, 59, 64, 0);border-bottom-color: #000;border-width: 16px;}
+
+
+
+.flexdropdownmenu li{position: relative;}
+.flexdropdownmenu li a{display: block;width: 220px;color: #fff;background: #000;border-bottom: 1px solid black;
+text-decoration: none;padding: 4px 5px;opacity:.6;}
+* html .flexdropdownmenu li{ display: inline-block;width: 170px; }
+.flexdropdownmenu li a:hover, .flexdropdownmenu li.selected>a{background: #000;opacity:1;}
+.rightarrowclass{position: absolute;top: 6px;right: 5px;}
+.ddshadow{position: absolute;left: 0;top: 0;width: 0;height: 0;background-color: #ccc;}
+.toplevelshadow{margin: 5px 0 0 5px;opacity: 0.8;}
+.ddcss3support .ddshadow.toplevelshadow {margin: 0;}
+.ddcss3support .ddshadow {background-color: transparent;box-shadow: 5px 5px 5px #aaa; /* box-shadow color generally should be a little darker than that for the NON CSS3 capable browsers background-color */
+-moz-box-shadow: 5px 5px 5px #aaa;
+-webkit-box-shadow: 5px 5px 5px #aaa;
+}
+
+/* ######### Mobile menu container CSS ######### */
+
+div.flexoverlay{ /* overlay that covers page when mobile menu is shown */
+width: 100%;
+height: 100%;
+left: 0;
+top: 0;
+position: fixed;
+background: black;
+-webkit-transform-style: preserve-3d;
+opacity: 0.7;
+z-index: 1000; /* z-index value should be smaller than 	mobilezindex: 1001 variable inside flexdropdown.js */
+display: none;
+}
+
+div.flexmenumobile{ /* main mobile menu container */
+position: fixed;
+color: white;
+width: 250px; /* width of mobile menu */
+display: none;
+}
+
+div.flexmenumobile a{
+color: white;
+text-decoration: none;
+}
+
+
+div.flexmenumobile ul{ /* style for all ULs in general inside mobile menu */
+list-style: none;
+width: 100%;
+top: 0;
+left: 0;
+background: white;
+border: 1px solid black;
+margin: 0;
+padding: 0;
+position: absolute;
+opacity: 0;
+visibility: hidden;
+}
+
+
+
+div.flexmenumobile ul li{
+border-bottom: 1px solid gray;
+position: relative;
+font-weight: bold;
+}
+
+div.flexmenumobile ul li.breadcrumb{ /* breadcrumb LI that's added to the top of every sub level UL */
+cursor: pointer;
+padding: 8px;
+padding-left: 5px;
+background: gray;
+font-size: 1.1em;
+}
+
+div.flexmenumobile ul li a{
+display: block;
+color: black;
+background: #fae7a9;
+border-bottom: 1px solid black;
+padding: 6px;
+font-size: 1.1em;
+}
+
+div.flexmenumobile ul li a:hover{
+background: #F0CE7D;
+}
+
+div.flexmenumobile ul img.backarrow{
+margin-right: 5px;
+}
+
+div.flexmenumobile ul img.rightarrow{
+position: absolute;
+right: 5px;
+top: 10px;
+}
+#nav > li >.flexmenu1{margin:0 40px;font-size:25px;}

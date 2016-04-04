@@ -16,7 +16,7 @@
       <link rel="stylesheet" href="/css/owl.theme.css" type="text/css">  
       <link rel="stylesheet" href="/css/custom.css" type="text/css">
 	 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet'>
-	 <link href='/fonts/css/font-awesome.css' rel='stylesheet'> 
+	 <link href='/css/font-awesome.css' rel='stylesheet'> 
      <link rel="stylesheet" href="/css/animate.css" type="text/css">
     <link rel="stylesheet" href="/css/jquery.steps.css" type="text/css">
       <link href='http://fonts.googleapis.com/css?family=Raleway:500,600' rel='stylesheet' type='text/css'>

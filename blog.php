@@ -43,29 +43,7 @@
       
       <?php 
       $sqlcount = mysqli_query($conn,"select count(*) AS total from `blog` where `status` = 1");
-      $total = mysqli_fetch_object($sqlcount)->total; ?>
-      <!-- JavaScript -->
-      <script type="text/javascript" src="/js/jquery.min.js"></script>
-      <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-      <!-- <script type="text/javascript" src="/js/application/spidergcon.js"></script> -->
-      <script type="text/javascript" src="/js/common.js"></script>
-      <script type="text/javascript" src="/js/revslider.js"></script>
-      <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-      <script type="text/javascript" src="/js/wow.min.js"></script>
-      <script type="text/javascript" src="/js/application/search_proank.js"></script>
-      <script>
-         new WOW().init();
-      </script>
-      <script type="text/javascript">
-          $(document).ready(function(){
-            $('#nomo').click(function(){
-               $('#sido1').slideToggle(1000);
-             });
-             $('#nomo1').click(function(){
-               $('#sido1').slideToggle(1000);
-             });
-          });  
-      </script>
+      $total = mysqli_fetch_object($sqlcount)->total; ?> 
       <script>
       function ajax_page(page_no)
       { 

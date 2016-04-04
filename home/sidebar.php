@@ -82,8 +82,7 @@
                             <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                         </div> 
                        
-                        <ul class="nav navbar-nav navbar-right">
-						
+                        <ul class="nav navbar-nav navbar-right"> 
                             <li class="">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                     <img src="images/img.jpg" id="upsideprofileimage" alt=""><?php $name = explode('@', $_SESSION['user_email']);
@@ -96,6 +95,14 @@
                                     </li>
                                 </ul>
                             </li>
+							<li>
+						<div class="container">
+  <a href="/home/notifications.php" class="btn btn-default btn-lg btn-link" style="font-size:36px;">
+    <span class="glyphicon glyphicon-comment"></span>
+  </a>
+  <span class="badge badge-notify">0</span>
+</div>
+						</li>
                         </ul>
                     </nav>
                 </div>

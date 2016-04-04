@@ -24,7 +24,7 @@ jQuery(function($) {
                 smartSpeed: 450,
                 loop: true,
                 dots: true,  
-				autoPlay : 1000,
+				autoPlay : 1000,stopOnHover : true,
                 dotsEach: 1,
                 nav: false,
                 navClass: ['owl-prev fa fa-angle-left', 'owl-next fa fa-angle-right'],

@@ -201,24 +201,6 @@
       </div> 
     </div>
     <div class="clearfix" style="margin-top:15px;"></div>
-      <?php include('footer.php'); ?>
-  
-      <!-- JavaScript -->
-      <script type="text/javascript" src="/js/jquery.min.js"></script>
-      <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="/js/common.js"></script>
-
-
-      <script type="text/javascript" src="/js/application/search_proank.js"></script>
-      <script type="text/javascript">
-          $(document).ready(function(){
-            $('#nomo').click(function(){
-               $('#sido1').slideToggle(1000);
-             });
-             $('#nomo1').click(function(){
-               $('#sido1').slideToggle(1000);
-             });
-          });  
-      </script>
+      <?php include('footer.php'); ?> 
    </body>
 </html>

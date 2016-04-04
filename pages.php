@@ -144,18 +144,7 @@ if(isset($_GET['username']))
 							}} 
 							?>  
 </div>
-<?php include('footer.php');?> 
-      <script type="text/javascript" src="/js/jquery.min.js"></script>
-      <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-      <!-- <script type="text/javascript" src="/js/application/spidergcon.js"></script> -->
-      <script type="text/javascript" src="/js/common.js"></script>
-      <script type="text/javascript" src="/js/revslider.js"></script>
-      <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-      <script type="text/javascript" src="/js/wow.min.js"></scrip>
-      <script type="text/javascript" src="/js/application/search_proank.js"></script>
-      <script type="text/javascript" src="/js/application/custom.js"></script>
-        <script type="text/javascript" src="/js/application/ankcustm.js"></script>
-        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+<?php include('footer.php');?>  
 <style>
 .addo{font-family:'Raleway',sans-serif;text-transform:uppercase;text-align:justify;font-size:13px;}
 .addo ol {font-size:25px;line-height:2.04;padding:0;counter-reset: item;}

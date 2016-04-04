@@ -53,12 +53,7 @@ table {
 }
 
 button,
-input[type='button'] {
-  background: none;
-  border: none;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
+input[type='button'] { 
   outline: none;
   outline-offset: 0;
   overflow: visible;
@@ -204,7 +199,7 @@ input[type='button']::-moz-focus-inner {
   width: 270px;
 }
 .container .grid_4 {
-  width: 31%;
+  width: 23%;
 }
 .container .grid_5 {
   width: 470px;

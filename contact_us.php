@@ -39,15 +39,9 @@ if(isset($_POST['submit']))
 
 include('head.php'); ?>
   
-   <body class="cms-index-index" bgcolor="#E6E6FA">
-           
-      <div class="page">
-         <!-- Header -->
-         
-         <!-- end header -->
-         <!-- Navbar -->
-      <?php include('inner_menu.php'); ?>
-      
+   <body class="cms-index-index" bgcolor="#E6E6FA"> 
+      <div class="page"> 
+      <?php include('inner_menu.php'); ?> 
          <div class="main-container col2-right-layout">
             <div class="main container">
                <div class="row">
@@ -135,29 +129,6 @@ include('head.php'); ?>
 
       </div>
          </div>
-       <?php include('footer.php'); ?>
-
-
-
-      <!-- JavaScript --> 
-      <script type="text/javascript" src="/js/jquery.min.js"></script> 
-      <script type="text/javascript" src="/js/bootstrap.min.js"></script> 
-       <script type="text/javascript" src="/js/common.js"></script>
-
-
-      <script type="text/javascript" src="/js/application/search_proank.js"></script>
-         <script type="text/javascript" src="/js/revslider.js"></script>
-      <script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-      <script type="text/javascript" src="/js/wow.min.js"></script>
-      <script type="text/javascript">
-          $(document).ready(function(){
-            $('#nomo').click(function(){
-               $('#sido1').slideToggle(1000);
-             });
-             $('#nomo1').click(function(){
-               $('#sido1').slideToggle(1000);
-             });
-          });  
-      </script>
+       <?php include('footer.php'); ?>   
    </body>
 </html>

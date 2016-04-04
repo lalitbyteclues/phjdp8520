@@ -30,20 +30,16 @@ legend {display: none;}
 
  #rev_slider_4 ul li div {height: 200px;}
       .bvb img {width: 100%;height: 300px;}
-      .line ul li {width: 19%;padding: 10px 0px 0px 0;text-align: center;background-color: #fff;color: #000;}
-      .line ul li:hover {background-color: #000;transition:all 350ms linear 0s;/*border-radius: 30% 100% 30% 100%;*/}
-	  
+      .line ul li {width: 26%;padding: 10px 13px 0px 0;text-align: center;}
+     /*.line ul li:hover {background-color: #000;transition:all 350ms linear 0s;/*border-radius: 30% 100% 30% 100%;}
+	 .line ul li:hover a {color: #fff;transition:all 350ms linear 0s;}
+      .line ul li:active a {color: #fff;transition:all 350ms linear 0s;}
+      .line ul li:focus a {color: #fff;transition:all 350ms linear 0s;}
+	 */ 
       .line ul li:active {width: 10%;padding: 0px 0px 0px 0px;text-align: center;background-color: #000;transition:all 350ms linear 0s;/*border-radius: 30% 100% 30% 100%;*/}
       .line ul li:focus {width: 10%;padding: 0px 0px 0px 0px;text-align: center;background-color: #000;transition:all 350ms linear 0s;/*border-radius: 30% 100% 30% 100%;*/}
       .line ul li a {font-size: 12px;font-weight: 700;text-decoration: none;color: #000;width:100%;float:left;}
-      .line ul li:hover a {color: #fff;transition:all 350ms linear 0s;}
-      .line ul li:active a {color: #fff;transition:all 350ms linear 0s;}
-      .line ul li:focus a {color: #fff;transition:all 350ms linear 0s;}
-	  
-	  .imageo {
-    margin: 8px 0;
-}
-      
+       .imageo { margin: 8px 0;}      
       .wer input {height: 50px;border-radius: 0%;}
       .wer input:focus {height: 50px;border-color: #000;opacity:0.78;color:#fff!important;background-color:#000;outline: 0;box-shadow: -3px 3px 7px -2px #000;transition:all 350ms linear 0s;}
       .wer input:hover {height: 50px;border-color: #000;opacity:0.68;color:#fff!important;background-color:#000;outline: 0;box-shadow: -3px 3px 7px -2px #000;transition:all 350ms linear 0s;}
@@ -91,7 +87,7 @@ legend {display: none;}
 .blloo h3 a:hover {text-decoration:none;color: #107B9D;transition:all 350ms linear 0s;} 
 .bloo {background-color: #000;padding: 14px;color: #fff;}
  
-.page {position: relative;margin: auto;background: #fff;width: 100%;}
+.page {position: relative;margin: auto;width: 100%;background: #e1e1e1;}
 /* 2a. Base Columns */
 .col-left {margin-bottom: 0px;}
 .col-main {}
@@ -9963,12 +9959,7 @@ nav {
 	display: block;
 	overflow: hidden;
 }
-#search {
-	border: none;
-	height: 30px;
-	margin: 0;
-	padding: 3px 6px;
-	width: 60%;
+#search { 
 	font-size: 12px;
 	border: 1px #fff solid;
 }
@@ -10602,7 +10593,7 @@ ol#compare-items li a.product-name {
 	width: 25%;
 }
 #search {
-	width: 62%;
+	 
 }
 #nav ul.level0 > li {
 	width: 18.6%;
@@ -10716,3 +10707,4 @@ ol#compare-items li a.product-name {
 	height: 300px;
 }
 }
+#wizard-p-1  input[type="checkbox"]{float:left;margin:0 5px 0 0;}

@@ -1093,9 +1093,8 @@ ul ul, ol ul, ul ol, ol ol {
 	list-style: none
 }
 .list-inline {
-	padding-left: 0;
-	margin-left: -5px;
-	list-style: none
+	padding-right:29px; 
+	text-align:right;
 }
 .list-inline>li {
 	display: inline-block;
