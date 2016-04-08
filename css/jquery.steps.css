@@ -123,6 +123,18 @@
 .tabcontrol > .content > .body ul{list-style: disc !important;}
 .tabcontrol > .content > .body ul > li{display: list-item;
 }
+@media (min-width:320px) and (max-width:413px) {.slider-content ul ul li a{width:93% !important;}
+#flexmenu1{left:136.5px !important;}
+.flexdropdownmenu:after, .flexdropdownmenu:before{left:77% !important;} 
+
+}
+@media (min-width:320px) and (max-width:480px) {
+.owl-controls{visibility:hidden;}
+}
+@media (min-width:414px) and (max-width:767px) {
+	.slider-content ul ul li a{width:93% !important;}
+#flexmenu1{left:55%!important;}
+.flexdropdownmenu:after, .flexdropdownmenu:before{left:77% !important;} }
 @media (min-width:320px) and (max-width:767px) { 
 .wizard > .steps {width:100%;margin:0;}
 .container {padding-right: 2px;padding-left: 2px;margin-right: auto;margin-left: auto;}
@@ -131,15 +143,17 @@
 .wizard  h3{font-size:18px;text-align:left;}
 .valuesForm  span{float:left;width:100%;} 
 .wizard > .steps .disabled a,.wizard > .steps .disabled a:hover,.wizard > .steps .disabled a:active
-{height:84px;padding: 8px;width: 81%;} 
+{height:55px;padding: 8px 0;width: 95%;} 
 .wizard > .steps .current a,.wizard > .steps .current a:hover,.wizard > .steps .current a:active{
-height: 84px;padding: 8px;width: 81%;}
+height: 55px;padding: 8px 0;width: 95%;}
 .wizard  .arrow{float: left;padding:28px 0 0 0;width:4%;}  
 .wizard > .steps .done a,.wizard > .steps .done a:hover,.wizard > .steps .done a:active{
-height:84px;padding:8px;width: 81%;
-} 
+height:55px;padding:8px 0;width: 95%;
+}  
 footer{padding-top:0px;}
 .wizard  .arrow  .fa{ }
+.page h3{font-size:27px;padding-left:1px!important;}
+.page .row-video{margin:20px -42px!important}
 }
 @media (min-width:768px) and (max-width:900px) {  
 .wizard > .steps .disabled a,.wizard > .steps .disabled a:hover,.wizard > .steps .disabled a:active
@@ -149,7 +163,8 @@ height: 110px;padding: 24px;width: 74%;}
 .wizard > .steps .done a,.wizard > .steps .done a:hover,.wizard > .steps .done a:active{
 height: 110px;padding: 24px;width: 74%;
 
-}        .jssorb05 {
+}}
+        .jssorb05 {
             position: absolute;
         }
         .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {

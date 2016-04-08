@@ -1,7 +1,7 @@
  //jQuery.noConflict()
 
 var flexdropdownmenu={
-	arrowpath: 'img/arrow.gif',backarrowpath: 'img/left.gif',animspeed: 200,showhidedelay: [150, 150],mobilemediaquery: "screen and (max-width: 600px)", // CSS media query string that when matched activates mobile menu (while hiding default)
+	arrowpath: 'img/arrow.gif',backarrowpath: 'img/left.gif',animspeed: 200,showhidedelay: [150, 150],mobilemediaquery: "screen and (max-width: 300px)", // CSS media query string that when matched activates mobile menu (while hiding default)
 
 	//***** NO NEED TO EDIT BEYOND HERE
 	mobilemql: null,

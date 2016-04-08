@@ -27,7 +27,7 @@
 .owl-carousel .owl-wrapper-outer {
 	overflow: hidden;
 	position: relative;
-	width: 100%;padding:5px;background:#fff;
+	width: 100%;padding:5px 0;background:#fff;
 }
 .owl-carousel .owl-wrapper-outer.autoHeight {
 	-webkit-transition: height 500ms ease-in-out;
@@ -36,8 +36,17 @@
 	-o-transition: height 500ms ease-in-out;
 	transition: height 500ms ease-in-out;
 }
+.owl-carousel .owl-item:nth-child(3n+1){
+	background:#189E95;color:#fff;
+}
+.owl-carousel .owl-item:nth-child(3n+2){
+	background:#5FE5E4;color:#fff;
+}
+.owl-carousel .owl-item:nth-child(3n){
+	background:#B9AA6F;color:#fff;
+}
 .owl-carousel .owl-item {
-	float: left;
+	float: left;margin:0;border:solid 1px #ccc;min-height:152px;
 }
 .owl-controls .owl-page, .owl-controls .owl-buttons div {
 	cursor: pointer;
@@ -63,3 +72,4 @@
 	-moz-transform: translate3d(0, 0, 0);
 	-ms-transform: translate3d(0, 0, 0);
 }
+.youtube_codegena{overflow:scroll !important;position:static !important;}

@@ -61,49 +61,26 @@ LatestTweets.init();
       <div class="container" >  
 		<h3>
 		See What's Trending
-		<span><a href="/">View All</a></span>
+		<span><a href="/products.php">View All</a></span>
 		</h3> 
 		<div class="row trending">
-          <div class="grid_4">
+		 <?php $magesfooter = mysqli_query($conn,"SELECT * FROM `home_advert` WHERE CATID in(SELECT ID FROM `homecategory` WHERE istop=0)");
+             if(mysqli_num_rows($magesfooter)>0){  
+			 $catid=2;  
+			 while($queRow = mysqli_fetch_array($magesfooter)){ 
+			 $base_url = '/';
+			 ?>
+           <div class="grid_4">
             <div class="box">
               <div class="">
-                <img alt="" width="160" src="/images/API.jpg">
+                <img title="<?php echo $queRow['Title']; ?>" alt="<?php echo $queRow['Title']; ?>" width="160" src="<?php echo $base_url.$queRow['image']?>">
               </div>
               <div class="box_cnt__no-flow">
-                <h5>Pharmaceutical</h5>
+                <h5><?php echo $queRow['Title']; ?></h5>
               </div>
             </div>
-          </div>
-          <div class="grid_4">
-            <div class="box">
-              <div class="">
-                <img alt="" width="160" src="/images/Pellets.jpg">
-              </div>
-              <div class="box_cnt__no-flow">
-                <h5>Pellets</h5>
-              </div>
-            </div>
-          </div>  
-		  <div class="grid_4">
-            <div class="box">
-              <div class="">
-                <img alt="" width="160" src="/images/Pellets.jpg">
-              </div>
-              <div class="box_cnt__no-flow">
-                <h5>Pellets</h5>
-              </div>
-            </div>
-          </div>
-		  <div class="grid_4">
-            <div class="box">
-              <div class="">
-                <img alt="" width="160" src="/images/Lab.jpg">
-              </div>
-              <div class="box_cnt__no-flow">
-                <h5>Lab Equipment</h5>
-              </div>
-            </div>
-          </div>
+          </div> 
+ <?php }} ?>  
           </div>
         </div> 
     </section>
@@ -113,8 +90,9 @@ LatestTweets.init();
 		<div class="row row-video"> 
           <div class="col-md-12">
 		  <div class="embed-responsive embed-responsive-16by9">
-          	<iframe  class="embed-responsive-item" type="text/html" src="http://www.youtube.com/embed/E-3VSZ91Ijs?autoplay=0&rel=0" >
-		  </iframe>  
+		  <div class='youtube_codegena' id='E-3VSZ91Ijs' data-params='?&theme=light&autoplay=1&color=white&autohide=2&cc_load_policy=1&modestbranding=1&rel=0&iv_load_policy=3' src='http://pharmerz.com/images/youtubethumbnail.png'style='width:850; height:500;'></div><script src='http://codegena.com/assets/js/youtube-embedv1.1.js'></script>
+          <!--	<iframe  class="embed-responsive-item" type="text/html" src="http://www.youtube.com/embed/E-3VSZ91Ijs?autoplay=0&rel=0" >
+		  </iframe>  -->
         </div> 
         </div> 
         </div>  
@@ -306,25 +284,24 @@ LatestTweets.init();
   <?php include('footer.php');?>  
      
 	  	   <script type="text/javascript" src="js/jssor.slider.mini.js"></script> 
-		    <script>
-        jQuery(document).ready(function ($) { 
-            var jssor_1_SlideoTransitions = [[{b:5500,d:3000,o:-1,r:240,e:{r:2}}],[{b:-1,d:1,o:-1,c:{x:51.0,t:-51.0}},{b:0,d:1000,o:1,c:{x:-51.0,t:51.0},e:{o:7,c:{x:7,t:7}}}],[{b:-1,d:1,o:-1,sX:9,sY:9},{b:1000,d:1000,o:1,sX:-9,sY:-9,e:{sX:2,sY:2}}],[{b:-1,d:1,o:-1,r:-180,sX:9,sY:9},{b:2000,d:1000,o:1,r:180,sX:-9,sY:-9,e:{r:2,sX:2,sY:2}}],[{b:-1,d:1,o:-1},{b:3000,d:2000,y:180,o:1,e:{y:16}}],[{b:-1,d:1,o:-1,r:-150},{b:7500,d:1600,o:1,r:150,e:{r:3}}],[{b:10000,d:2000,x:-379,e:{x:7}}],[{b:10000,d:2000,x:-379,e:{x:7}}],[{b:-1,d:1,o:-1,r:288,sX:9,sY:9},{b:9100,d:900,x:-1400,y:-660,o:1,r:-288,sX:-9,sY:-9,e:{r:6}},{b:10000,d:1600,x:-200,o:-1,e:{x:16}}]];
-            var jssor_1_options ={$AutoPlay: true,$SlideDuration: 800,$SlideEasing: $Jease$.$OutQuint,$CaptionSliderOptions: {$Class: $JssorCaptionSlideo$,$Transitions: jssor_1_SlideoTransitions},$ArrowNavigatorOptions: {$Class: $JssorArrowNavigator$},$BulletNavigatorOptions: {$Class: $JssorBulletNavigator$}};
-			var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-            function ScaleSlider() { var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-                if (refSize) {refSize = Math.min(refSize, 1920);
-                    jssor_1_slider.$ScaleWidth(refSize);
-                }
-                else {
-                    window.setTimeout(ScaleSlider, 30);
-                }
-            }
-            ScaleSlider();
-            $(window).bind("load", ScaleSlider);
-            $(window).bind("resize", ScaleSlider);
-            $(window).bind("orientationchange", ScaleSlider);
-            //responsive code end
-        });
+<script>
+jQuery(document).ready(function ($) { 
+var jssor_1_SlideoTransitions = [[{b:5500,d:3000,o:-1,r:240,e:{r:2}}],[{b:-1,d:1,o:-1,c:{x:51.0,t:-51.0}},{b:0,d:1000,o:1,c:{x:-51.0,t:51.0},e:{o:7,c:{x:7,t:7}}}],[{b:-1,d:1,o:-1,sX:9,sY:9},{b:1000,d:1000,o:1,sX:-9,sY:-9,e:{sX:2,sY:2}}],[{b:-1,d:1,o:-1,r:-180,sX:9,sY:9},{b:2000,d:1000,o:1,r:180,sX:-9,sY:-9,e:{r:2,sX:2,sY:2}}],[{b:-1,d:1,o:-1},{b:3000,d:2000,y:180,o:1,e:{y:16}}],[{b:-1,d:1,o:-1,r:-150},{b:7500,d:1600,o:1,r:150,e:{r:3}}],[{b:10000,d:2000,x:-379,e:{x:7}}],[{b:10000,d:2000,x:-379,e:{x:7}}],[{b:-1,d:1,o:-1,r:288,sX:9,sY:9},{b:9100,d:900,x:-1400,y:-660,o:1,r:-288,sX:-9,sY:-9,e:{r:6}},{b:10000,d:1600,x:-200,o:-1,e:{x:16}}]];
+var jssor_1_options ={$AutoPlay: true,$SlideDuration: 800,$SlideEasing: $Jease$.$OutQuint,$CaptionSliderOptions: {$Class: $JssorCaptionSlideo$,$Transitions: jssor_1_SlideoTransitions},$ArrowNavigatorOptions: {$Class: $JssorArrowNavigator$},$BulletNavigatorOptions: {$Class: $JssorBulletNavigator$}};
+var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+function ScaleSlider() { var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+if (refSize) {refSize = Math.min(refSize, 1920);
+    jssor_1_slider.$ScaleWidth(refSize);
+   }
+   else {
+	   window.setTimeout(ScaleSlider, 30);
+	   }
+}
+ScaleSlider();
+$(window).bind("load", ScaleSlider);
+$(window).bind("resize", ScaleSlider);
+$(window).bind("orientationchange", ScaleSlider);
+});
     </script>  
    </body>
 </html>
