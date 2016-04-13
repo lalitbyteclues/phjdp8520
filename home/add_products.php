@@ -177,6 +177,10 @@ if($_SESSION['user_id'] == ''){ header('Location: ../index.php'); } ?>
 </script>
 <script type="text/javascript">
 $(document).ready(function() { 
+ var loginToken ="";
+ var loginTokenTS="";
+ var k = 0;
+ var myJsonString=[];
 	 $('#uploadForm').submit(function(e) {	
 	  $(".se-pre-con").fadeIn("slow");
 		if($('#userImage').val()) {
@@ -202,34 +206,47 @@ $(document).ready(function() {
                             alert("Your excel is not having Valid Format");
 						return false;
 					}
-					var username = "<?php echo $_SESSION['user_email']; ?>";
-					var myJsonString = JSON.parse(aa);
 					
-					var i=0; 
-					var k = 0;
+					username = "<?php echo $_SESSION['user_email']; ?>";
+					  myJsonString = JSON.parse(aa);  
+					  console.log(myJsonString);
 				 spiderG.getLoginToken(username, function()
 				 {
-				 var loginToken = spiderG['loginToken'];
-	          var loginTokenTS = spiderG['loginTokenTS'];
-                    for(var i=0;i<myJsonString.length;i++){ 
-                        loadProjects(myJsonString[i],loginToken,loginTokenTS, function()    
-                      {
-                        k++; 
-                        if(k==myJsonString.length){                         
-                            $('#loader-icon').hide();
-                            $(".se-pre-con").fadeOut("slow");
-                            alert("Products have been uploaded successfully.");
-                        }
-                    }); 
-                    }   }); 
+				loginToken= spiderG['loginToken'];
+	            loginTokenTS = spiderG['loginTokenTS'];
+				  setInterval(function () {
+                    spiderG.getLoginToken(username, function () {
+                        loginToken = spiderG['loginToken'];
+                        loginTokenTS = spiderG['loginTokenTS'];
+                    });  }, 100000);
+				if(myJsonString.length>0){
+				saveDataInputs(); }
+                      }); 
 				},
 				resetForm: true 
 			}); 
 			return false; 
 		}
 	});
-function loadProjects(productdata,loginToken,loginTokenTS, callback)
+ var saveDataInputs = function () {
+ loadProjects(myJsonString[k], function () {
+            k++; 
+            if (k < myJsonString.length) {
+                saveDataInputs();
+            }
+            else {
+                $('#loader-icon').hide();
+                            $(".se-pre-con").fadeOut("slow");
+                            alert("Products have been uploaded successfully.");
+            }
+        });
+    }
+function loadProjects(productdata,callback)
 {
+	console.log(productdata);
+	if(productdata.name==""){
+		callback();
+	}else{
 $("#catdrpdwn option").filter(function() {return $(this).text() == productdata.category_id;}).prop('selected', true);
 $("#drpdwn option").filter(function() {return $(this).text() == productdata.uom;}).prop('selected', true);	
 $catid="";
@@ -238,18 +255,11 @@ if($.grep(categorylistparsed,function (category){return category.name == product
 	}else{ 
 		$catid=$("#catdrpdwn").val();
 	}	
-var product ={"ispurchased":productdata.ispurchased,"issold":productdata.issold,"ispublic":productdata.ispublic
-					,"name":productdata.name,"uom":$("#drpdwn").val(),"category_id":$catid,"sku":productdata.sku
-					,"upc":productdata.upc,"notes":productdata.notes,};
-			var objectDataString = JSON.stringify(product);
-	    	 
+var product ={"ispurchased":productdata.ispurchased,"issold":productdata.issold,"ispublic":productdata.ispublic,"name":productdata.name,"uom":$("#drpdwn").val(),"category_id":$catid,"sku":productdata.sku,"upc":productdata.upc,"notes":productdata.notes,};
+var objectDataString = JSON.stringify(product);
 var username = "<?php echo $_SESSION['user_email']; ?>";
 var password = "<?php echo $_COOKIE['password']; ?>"; 
-	          $.ajax({
-	              type: "POST",
-	              url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/product",
-	              contentType:'application/json',dataType: 'text',
-	              contentLength:objectDataString.length,
+$.ajax({type: "POST",url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/product",contentType:'application/json',dataType: 'text',contentLength:objectDataString.length,
 	              headers: { 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb',
 	                         'SPIDERG-Authorization': "SPIDERGAUTH "+ createAuthenticationHeader(username,password,loginToken,loginTokenTS)
 	                    },
@@ -260,7 +270,7 @@ var password = "<?php echo $_COOKIE['password']; ?>";
 							error: function (err) {
 							console.log(err);
 							  callback();
-							} });  	 
+	} });  };	 
 };
 }); 
 
