@@ -73,7 +73,7 @@ session_start();
     <script src="../js/application/ankcustm.js"></script>
     <script src="js/custom.js"></script>
     <script type="text/javascript" src="../js/application/custom.js"></script>
-    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script> 
+    <script src="http://pharmerz.com/admin/js/md5.js"></script> 
     <script type="text/javascript" src="js/flot/jquery.flot.js"></script>
     <script type="text/javascript" src="js/flot/jquery.flot.pie.js"></script>
     <script type="text/javascript" src="js/flot/jquery.flot.orderBars.js"></script>
