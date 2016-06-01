@@ -95,7 +95,7 @@
          <!-- Datatables -->
         <script type="text/javascript" src="../js/application/custom.js"></script>
         <script type="text/javascript" src="../js/application/ankcustm.js"></script>
-        <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+        <script src="http://pharmerz.com/admin/js/md5.js"></script>
         <script src="https://cdn.datatables.net/1.10.9/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.9/js/dataTables.bootstrap.min.js"></script>
         <script>
@@ -119,7 +119,7 @@
             });
         }, 100000);
         $.ajax({
-            type: "GET", url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/mailbox?dtype=rfq&limit=10", contentType: 'application/json', headers: { 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb', 'SPIDERG-Authorization': "SPIDERGAUTH " + createAuthenticationHeader(username, password, loginToken, loginTokenTS) }, success: function (data) {
+            type: "GET", url: "http://vpn.spiderg.com:8081/SpiderGAPIServer/api/mailbox?dtype=rfq&limit=99999999", contentType: 'application/json', headers: { 'SPIDERG-API-Key': 'e5e3b300-31e9-4ad2-a705-4f8935218fcb', 'SPIDERG-Authorization': "SPIDERGAUTH " + createAuthenticationHeader(username, password, loginToken, loginTokenTS) }, success: function (data) {
                 people = data;
                 if (people.length > 0) { 
                     saveDataInputs();
